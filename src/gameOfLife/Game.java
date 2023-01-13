@@ -65,20 +65,12 @@ public class Game {
                 createBoard(width, height, this.board);
             }
         }
-        // return this.board;
     }
 
     // INITIALIZE BOARD
     public void createBoard(int rows, int cols, int[][] board) {
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                System.out.print(board[i][j]);
-                System.out.print(" ");
-            }
-            System.out.println();
-        }
         // Displaying the grid
-        System.out.println("\nOriginal Generation");
+        System.out.println("\nGeneration 1");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 if (board[i][j] == 0)
@@ -90,7 +82,6 @@ public class Game {
         }
         System.out.println();
         nextGeneration(board, rows, cols);
-        // return board;
     }
 
     // Function to print next generation
@@ -131,7 +122,7 @@ public class Game {
             }
         }
 
-        System.out.println("Next Generation");
+        System.out.printf("Generation %d\n", count);
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 if (future[i][j] == 0)
@@ -142,7 +133,6 @@ public class Game {
             System.out.println();
         }
         while (count < 5) {
-            System.out.println(count);
             nextGeneration(future, rows, cols);
         }
     }
